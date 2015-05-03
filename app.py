@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from flask import Flask, request
 app = Flask(__name__)
 app.debug = True
@@ -21,7 +23,7 @@ def url_return_uninstall(url):
     # do stuff to pull it out
     wordList = url.split("%")
     for word in wordList:
-      returnValue += 'brew_cask_uninstall "' + word + '"<br/>'
+      returnValue += 'brew_cask_uninstall \'' + word + '\'\n'
   else:
     returnValue += 'brew_cask_uninstall "' + url + '"'
   return returnValue
